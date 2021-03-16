@@ -1,14 +1,16 @@
   <div class="card"> 
-    <form class="updateall" method="POST" action="/update">
+    <form class="updateall" method="POST">
       <button class="updatebtn"><i class="fa fa-bars"></i></button>
       <input type="hidden" name="id" value="{id}">
+      <input type="hidden" name="selecionar" value="1">
     </form>
     <h3 class="card-title">{title}</h3>
     <div class="card-content">
       <p>{details}</p>
     </div>
-    <form class="delcont" method="POST" action="/delete">
+    <form class="delcont" method="POST">
       <button class="delbtn" type="submit"><i class="fa fa-trash"></i></button>
       <input type="hidden" name="id" value="{id}">
+      <input type="hidden" name="selecionar" value="2">
     </form>
   </div>  

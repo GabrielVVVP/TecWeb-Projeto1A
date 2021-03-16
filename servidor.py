@@ -1,7 +1,7 @@
 import socket
 from pathlib import Path
 from utils import extract_route, read_file, build_response
-from views import index, delete_req, update_req, update_return
+from views import index
 
 CUR_DIR = Path(__file__).parent
 SERVER_HOST = '0.0.0.0'
@@ -25,15 +25,10 @@ while True:
     if filepath.is_file():
         response = build_response() + read_file(filepath)
     elif route == '':
-        response = index(request)
-    elif route == 'delete':
-        response = delete_req(request)  
-    elif (route == 'update'):
-        response = update_req(request)   
-    elif (route == 'return'):
-        response = update_return(request)             
+        response = index(request)           
     else:
         response = build_response()
+        
     if response is not None:    
         client_connection.sendall(response)
 
